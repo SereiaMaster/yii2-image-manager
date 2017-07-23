@@ -5,7 +5,7 @@ use yii\widgets\ListView;
 use yii\widgets\Pjax;
 use kartik\file\FileInput;
 
-$this->title = Yii::t('imagemanager','Image manager');
+$this->title = "Image manager";
 
 ?>
 <div id="module-imagemanager" class="container-fluid <?=$selectType?>">
@@ -18,17 +18,17 @@ $this->title = Yii::t('imagemanager','Image manager');
 				<div class="action-buttons">
 					<a href="#" class="btn btn-primary apply-crop">
 						<i class="fa fa-crop"></i>
-						<span class="hidden-xs"><?=Yii::t('imagemanager','Crop')?></span>
+						<span class="hidden-xs"><?=Yii::t('imagemanager','Recortar')?></span>
 					</a>
 					<?php if($viewMode === "iframe"): ?>
 					<a href="#" class="btn btn-primary apply-crop-select">
 						<i class="fa fa-crop"></i>
-						<span class="hidden-xs"><?=Yii::t('imagemanager','Crop and select')?></span>
+						<span class="hidden-xs"><?=Yii::t('imagemanager','Recordar e Selecionar')?></span>
 					</a>
 					<?php endif; ?>
 					<a href="#" class="btn btn-default cancel-crop">
 						<i class="fa fa-undo"></i>
-						<span class="hidden-xs"><?=Yii::t('imagemanager','Cancel')?></span>
+						<span class="hidden-xs"><?=Yii::t('imagemanager','Cancelar')?></span>
 					</a>
 				</div>
 			</div> 
@@ -50,7 +50,7 @@ $this->title = Yii::t('imagemanager','Image manager');
 		</div>
 		<div class="col-xs-6 col-sm-2 col-options">
 			<div class="form-group">
-				<?=Html::textInput('input-mediamanager-search', null, ['id'=>'input-mediamanager-search', 'class'=>'form-control', 'placeholder'=>Yii::t('imagemanager','Search').'...'])?>
+				<?=Html::textInput('input-mediamanager-search', null, ['id'=>'input-mediamanager-search', 'class'=>'form-control', 'placeholder'=>Yii::t('imagemanager','Procurar').'...'])?>
 			</div>
 
 			<?php
@@ -74,7 +74,7 @@ $this->title = Yii::t('imagemanager','Image manager');
 					'showCancel' => false,
 					'browseClass' => 'btn btn-primary btn-block',
 					'browseIcon' => '<i class="fa fa-upload"></i> ',
-					'browseLabel' => Yii::t('imagemanager','Upload')
+					'browseLabel' => 'Enviar Imagem'
 				],
 				'pluginEvents' => [
 					"filebatchselected" => "function(event, files){  $('.msg-invalid-file-extension').addClass('hide'); $(this).fileinput('upload'); }",
@@ -96,7 +96,7 @@ $this->title = Yii::t('imagemanager','Image manager');
 				<div class="edit-buttons">
 					<a href="#" class="btn btn-primary btn-block crop-image-item">
 						<i class="fa fa-crop"></i>
-						<span class="hidden-xs"><?=Yii::t('imagemanager','Crop')?></span>
+						<span class="hidden-xs"><?=Yii::t('imagemanager','Recortar')?></span>
 					</a>
 				</div>
 				<div class="details">
@@ -107,15 +107,15 @@ $this->title = Yii::t('imagemanager','Image manager');
 					<?php
 						if (Yii::$app->controller->module->canRemoveImage):
 					?>
-						<a href="#" class="btn btn-xs btn-danger delete-image-item" ><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> <?=Yii::t('imagemanager','Delete')?></a>
+						<a href="#" class="btn btn-xs btn-danger delete-image-item" ><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> <?=Yii::t('imagemanager','Deletar')?></a>
 					<?php
 						endif;
 					?>
 				</div>
 				<?php if($viewMode === "iframe"): ?>
-				<a href="#" class="btn btn-primary btn-block pick-image-item"><?=Yii::t('imagemanager','Select')?></a> 
+				<a href="#" class="btn btn-primary btn-block pick-image-item"><?=Yii::t('imagemanager','Selecionar')?></a>
 				<?php endif; ?>
 			</div>
-		</div>  
+		</div>
 	</div>
-</div>  
+</div>
